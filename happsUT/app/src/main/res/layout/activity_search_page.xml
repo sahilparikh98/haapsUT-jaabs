@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.jaabs.alanzeng.happsut.searchPage">
 
+<<<<<<< Updated upstream
     <android.support.design.widget.TabLayout
         android:layout_width="400sp"
         android:layout_height="50sp"
@@ -33,4 +34,13 @@
             android:text="About Me" />
     </android.support.design.widget.TabLayout>
 
+=======
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+>>>>>>> Stashed changes
 </RelativeLayout>

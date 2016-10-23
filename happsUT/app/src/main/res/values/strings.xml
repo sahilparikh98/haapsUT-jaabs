@@ -23,7 +23,29 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+<<<<<<< Updated upstream
     <string name="title_activity_home_page_user">homePageUser</string>
     <string name="section_format">Hello World from section: %1$d</string>
+=======
+    <string name="date_from">Date From</string>
+    <string name="starting_date">Starting Date</string>
+    <string name="date_to">Date To</string>
+    <string name="ending_date">Ending Date</string>
+    <string name="create_event">Create Event</string>
+    <string name="description">Description</string>
+    <string name="description_of_event">Description of Event</string>
+    <string name="time_from">Time From</string>
+    <string name="starting_time">Starting Time</string>
+    <string name="location">Location</string>
+    <string name="location_of_event">Location of Event</string>
+    <string name="event_name">Event Name</string>
+    <string name="name_of_event">Name of Event</string>
+    <string name="add_tags">Add Tags</string>
+    <string name="time_to">Time To</string>
+    <string name="ending_time">Ending Time</string>
+    <string name="to">to</string>
+    <string name="edit_event">Edit Event</string>
+    <string name="edit_tags">Edit Tags</string>
+>>>>>>> Stashed changes
 
 </resources>
