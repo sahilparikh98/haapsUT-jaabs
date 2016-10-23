@@ -19,6 +19,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import android.widget.TextView;
+import com.parse.ParseAnonymousUtils;
+import com.parse.ParseUser;
+import com.parse.Parse;
 
 public class homePageUser extends AppCompatActivity implements View.OnClickListener {
 
