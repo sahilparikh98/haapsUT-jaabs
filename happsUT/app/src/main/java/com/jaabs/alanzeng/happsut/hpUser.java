@@ -18,11 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
-import com.parse.ParseAnonymousUtils;
-import com.parse.ParseUser;
-import com.parse.Parse;
 
-public class homePageUser extends AppCompatActivity {
+public class hpUser extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -137,7 +134,7 @@ public class homePageUser extends AppCompatActivity {
             }
             else
             {
-                View rootView = inflater.inflate(R.layout.fragment_home_page_user, container, false);
+                View rootView = inflater.inflate(R.layout.fragment_hp_user, container, false);
                 TextView textView = (TextView) rootView.findViewById(R.id.section_label);
                 textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
                 return rootView;
