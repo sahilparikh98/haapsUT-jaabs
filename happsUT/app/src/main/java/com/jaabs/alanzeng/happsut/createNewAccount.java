@@ -32,6 +32,7 @@ public class createNewAccount extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 ParseQuery<ParseUser> query = ParseQuery.getQuery("User");
                 query.whereEqualTo("email", ((EditText)findViewById(R.id.newUserEmail)).getText().toString());
                 query.findInBackground(new FindCallback<ParseUser>() {
@@ -62,6 +63,7 @@ public class createNewAccount extends AppCompatActivity {
                         }
                     }
                 });
+
 
 
             }

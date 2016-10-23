@@ -18,6 +18,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import com.parse.ParseAnonymousUtils;
+import com.parse.ParseUser;
+import com.parse.Parse;
 
 public class homePageUser extends AppCompatActivity {
 
