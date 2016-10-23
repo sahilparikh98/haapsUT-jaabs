@@ -16,10 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import android.widget.TextView;
 
-public class homePageUser extends AppCompatActivity {
+public class homePageUser extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -35,6 +36,7 @@ public class homePageUser extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private Button buttonname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +53,11 @@ public class homePageUser extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById
+                (R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        buttonname = (Button) findViewById(R.id.buttonname);
+        buttonname.setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +67,11 @@ public class homePageUser extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+    }
+    @Override
+    public void onClick(View view) {
+        //save function
 
     }
 
@@ -112,7 +122,7 @@ public class homePageUser extends AppCompatActivity {
             fragment.setArguments(args);
             return fragment;
         }
-
+        //@author:Alan
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -130,6 +140,7 @@ public class homePageUser extends AppCompatActivity {
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 3)
             {
                 View rootView = inflater.inflate(R.layout.fragment_page3, container, false);
+
                 return rootView;
             }
             else

@@ -16,7 +16,44 @@
         android:layout_height="wrap_content"
         android:id="@+id/NAME"
         android:layout_weight="0.05"
+        android:imeOptions="actionNext"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:imeOptions="actionNext"
+        android:layout_marginBottom="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </LinearLayout>
+
+    <Switch
+        android:text="Notifications"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/notifs"
+        android:layout_weight="1"
+        android:layout_below="@+id/EMAIL"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
+
+    <TextView
+        android:text="Selected Tags: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TAGS"
+        android:layout_weight="0.05"
+        android:imeOptions="actionNone"
+        android:layout_marginTop="45dp"
+        android:layout_alignTop="@+id/notifs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -26,39 +63,20 @@
         android:layout_height="wrap_content"
         android:id="@+id/EMAIL"
         android:layout_weight="0.05"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/NAME"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:text="Selected Tags: "
-        android:layout_width="match_parent"
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/TAGS"
-        android:layout_weight="0.05"
-        android:layout_below="@+id/EMAIL"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/buttonname" />
 
-    <Switch
-        android:text="Notifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/notifs"
-        android:layout_weight="0.05"
-        android:layout_below="@+id/TAGS"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1"
-        android:layout_below="@+id/notifs"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-    </LinearLayout>
 </RelativeLayout>
 
