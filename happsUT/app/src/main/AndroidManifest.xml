@@ -44,17 +44,17 @@
             android:label="Create New Organization" />
         <activity
             android:name=".homePageUser"
+
             android:label="happsUT"
             android:theme="@style/nullLOL.NoActionBar">
-
-        </activity>
-        <activity android:name=".chooseNewAccount">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        <activity android:name=".chooseNewAccount"/>
+        <activity android:name=".happsUTApplication"/>
+    </activity>
     </application>
 
 </manifest>

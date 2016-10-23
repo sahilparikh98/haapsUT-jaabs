@@ -20,18 +20,20 @@ public class happsUTApplication extends Application {
     {
         super.onCreate();
         OneSignal.startInit(this).init();
-        Parse.initialize(new Parse.Configuration.Builder(this).applicationId("happsut1").server("https://happsut-jaabs-server.herokuapp.com/parse").build());
+        Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(Post.class);
         ParseObject.registerSubclass(PostTags.class);
         ParseObject.registerSubclass(Tag.class);
         ParseObject.registerSubclass(UserTags.class);
+        Parse.initialize(new Parse.Configuration.Builder(getApplicationContext()).applicationId("happsut1").server("https://happsut-jaabs-server.herokuapp.com/parse").build());
 
-        ParseUser.enableAutomaticUser();
-        ParseACL defaultACL = new ParseACL();
 
-        defaultACL.setPublicReadAccess(true);
-
-        ParseACL.setDefaultACL(defaultACL, true);
+//        ParseUser.enableAutomaticUser();
+//        ParseACL defaultACL = new ParseACL();
+//
+//        defaultACL.setPublicReadAccess(true);
+//
+//        ParseACL.setDefaultACL(defaultACL, true);
 
     }
 

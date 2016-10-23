@@ -42,32 +42,27 @@ public class homePageUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if(ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())){
+       super.onCreate(savedInstanceState);
+        //start login check through backend
+        //@author: Sahil
+        ParseUser currentUser = ParseUser.getCurrentUser(); //get user
+        if(currentUser != null) { //if not null, then handle either org or student
+            Intent intent;
+            if(currentUser.getBoolean("isOrg")) {
+                intent = new Intent(homePageUser.this, homePageOrg.class);
+            }
+            else {
+                intent = new Intent(homePageUser.this, homePageUser.class);
+            }
+            startActivity(intent);
+            finish();
+        }
+        else { //if null we need to create a new account
             Intent intent = new Intent(homePageUser.this, LoginPage.class);
             startActivity(intent);
             finish();
         }
-        else {
-            ParseUser currentUser = ParseUser.getCurrentUser();
-            if(currentUser != null) {
-                Intent intent;
-                if(currentUser.getBoolean("isOrg")) {
-                    intent = new Intent(homePageUser.this, homePageOrg.class);
-                }
-                else {
-                    intent = new Intent(homePageUser.this, homePageUser.class);
-                }
-                startActivity(intent);
-                finish();
-            }
-            else {
-                Intent intent = new Intent(homePageUser.this, createNewAccount.class);
-                startActivity(intent);
-                finish();
-            }
-        }
+        //end login check through backend
         setContentView(R.layout.activity_home_page_user);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -139,8 +134,8 @@ public class homePageUser extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
             {
+                System.out.print("hello");
                 View rootView = inflater.inflate(R.layout.fragment_page1, container, false);
-                System.out.print("asd");
                 return rootView;
             }
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 2)
