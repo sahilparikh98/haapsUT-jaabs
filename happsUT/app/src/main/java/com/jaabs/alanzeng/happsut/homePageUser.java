@@ -108,11 +108,12 @@ public class homePageUser extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-//            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
-//            {
-//                View rootView = inflater.inflate(R.layout.fragment_page1, container, false);
-//                return rootView;
-//            }
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
+            {
+                View rootView = inflater.inflate(R.layout.fragment_page1, container, false);
+                System.out.print("asd");
+                return rootView;
+            }
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 2)
             {
                 View rootView = inflater.inflate(R.layout.fragment_page2, container, false);
@@ -126,9 +127,6 @@ public class homePageUser extends AppCompatActivity {
             else
             {
                 View rootView = inflater.inflate(R.layout.fragment_home_page_user, container, false);
-                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-                String text = getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER));
-                textView.setText(text);
                 return rootView;
             }
 
