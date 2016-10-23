@@ -20,7 +20,10 @@ public class createNewAccount extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 startActivity(new Intent(createNewAccount.this, LoginPage.class));
+
             }
         });
     }
