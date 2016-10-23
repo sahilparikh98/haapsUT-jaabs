@@ -39,7 +39,7 @@ public class homePageUser extends AppCompatActivity implements View.OnClickListe
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    private Button buttonname;
+    //private Button buttonname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,8 @@ public class homePageUser extends AppCompatActivity implements View.OnClickListe
         TabLayout tabLayout = (TabLayout) findViewById
                 (R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-        buttonname = (Button) findViewById(R.id.buttonname);
-        buttonname.setOnClickListener(this);
+        //buttonname = (Button) findViewById(R.id.buttonname);
+        //buttonname.setOnClickListener(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
