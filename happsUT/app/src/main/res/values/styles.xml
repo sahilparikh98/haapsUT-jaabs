@@ -12,9 +12,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="nullLOL" parent = "AppTheme">
-        <item name = "android:windowNoTitle">true</item>
-        <item name = "android:windowContentOverlay">@null</item>
+
+    <style name="nullLOL" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
 
     </style>
 
@@ -22,5 +23,14 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="nullLOL.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="nullLOL.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="nullLOL.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

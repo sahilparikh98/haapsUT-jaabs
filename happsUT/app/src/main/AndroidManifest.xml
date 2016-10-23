@@ -18,7 +18,7 @@
             android:label="Feed" />
         <activity
             android:name=".searchPage"
-            android:label="Search"/>
+            android:label="Search" />
         <activity
             android:name=".LoginPage"
             android:label="@string/title_activity_login_page" />
@@ -33,13 +33,17 @@
             android:label="Feed" />
         <activity
             android:name=".addNewEvent"
-            android:label = "Add New Event"/>
+            android:label="Add New Event" />
         <activity
             android:name=".editEvent"
-            android:label="Edit Event"/>
+            android:label="Edit Event" />
         <activity
             android:name=".createNewOrg"
-            android:label = "Create New Organization"/>
+            android:label="Create New Organization" />
+        <activity
+            android:name=".homePageUser"
+            android:label="@string/title_activity_home_page_user"
+            android:theme="@style/nullLOL.NoActionBar"></activity>
     </application>
 
 </manifest>
