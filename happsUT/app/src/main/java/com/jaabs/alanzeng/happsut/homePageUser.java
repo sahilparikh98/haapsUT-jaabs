@@ -1,6 +1,7 @@
 package com.jaabs.alanzeng.happsut;
 
 import android.content.Intent;
+import android.preference.PreferenceActivity;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -45,22 +46,28 @@ public class homePageUser extends AppCompatActivity {
        super.onCreate(savedInstanceState);
         //start login check through backend
         //@author: Sahil
-        ParseUser currentUser = ParseUser.getCurrentUser(); //get user
-        if(currentUser != null) { //if not null, then handle either org or student
-            Intent intent;
-            if(currentUser.getBoolean("isOrg")) {
-                intent = new Intent(homePageUser.this, homePageOrg.class);
-            }
-            else {
-                intent = new Intent(homePageUser.this, homePageUser.class);
-            }
-            startActivity(intent);
-            finish();
-        }
-        else { //if null we need to create a new account
+        if(ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser()))
+        {
             Intent intent = new Intent(homePageUser.this, LoginPage.class);
             startActivity(intent);
             finish();
+        }
+        else {
+            ParseUser currentUser = ParseUser.getCurrentUser(); //get user
+            if (currentUser != null) { //if not null, then handle either org or student
+                Intent intent;
+                if (currentUser.getBoolean("isOrg")) {
+                    intent = new Intent(homePageUser.this, homePageOrg.class);
+                } else {
+                    intent = new Intent(homePageUser.this, homePageUser.class);
+                }
+                startActivity(intent);
+                finish();
+            } else { //if null we need to create a new account
+                Intent intent = new Intent(homePageUser.this, LoginPage.class);
+                startActivity(intent);
+                finish();
+            }
         }
         //end login check through backend
         setContentView(R.layout.activity_home_page_user);

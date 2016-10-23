@@ -55,11 +55,6 @@
             android:theme="@style/nullLOL.NoActionBar">
         <activity android:name=".chooseNewAccount"/>
         <activity android:name=".happsUTApplication"/>
-    </activity>
-
-        </activity>
-        <activity android:name=".chooseNewAccount">
-
         </activity>
     </application>
 
