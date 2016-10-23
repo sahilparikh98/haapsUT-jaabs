@@ -9,12 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
-import com.parse.GetCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 import java.util.List;
@@ -43,12 +40,12 @@ public class createNewAccount extends AppCompatActivity {
                         }else{
                             ParseUser user = new ParseUser();
                             user.setUsername(((EditText)findViewById(R.id.newUserName)).getText().toString());
-                            user.setPassword(((EditText)findViewById(R.id.newUserPassword)).getText().toString());
-                            user.setEmail(((EditText)findViewById(R.id.newUserPassword)).getText().toString());
+                            user.setPassword(((EditText)findViewById(R.id.orgPassword)).getText().toString());
+                            user.setEmail(((EditText)findViewById(R.id.orgPassword)).getText().toString());
                             user.put("isOrg", false);
                             UserTags userTags = new UserTags();
                             userTags.setTag("Free Food"); // TODO: loop through all tags to add
-                            userTags.setOfUser(((EditText)findViewById(R.id.newUserPassword)).getText().toString());
+                            userTags.setOfUser(((EditText)findViewById(R.id.orgPassword)).getText().toString());
 
                             user.signUpInBackground(new SignUpCallback() {
                                 public void done(ParseException e) {
