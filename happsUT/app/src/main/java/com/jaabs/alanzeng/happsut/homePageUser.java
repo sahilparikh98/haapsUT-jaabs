@@ -1,5 +1,6 @@
 package com.jaabs.alanzeng.happsut;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import com.parse.ParseAnonymousUtils;
+import com.parse.ParseUser;
 
 public class homePageUser extends AppCompatActivity {
 
@@ -39,6 +43,31 @@ public class homePageUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())){
+            Intent intent = new Intent(homePageUser.this, LoginPage.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            if(currentUser != null) {
+                Intent intent;
+                if(currentUser.getBoolean("isOrg")) {
+                    intent = new Intent(homePageUser.this, homePageOrg.class);
+                }
+                else {
+                    intent = new Intent(homePageUser.this, homePageUser.class);
+                }
+                startActivity(intent);
+                finish();
+            }
+            else {
+                Intent intent = new Intent(homePageUser.this, createNewAccount.class);
+                startActivity(intent);
+                finish();
+            }
+        }
         setContentView(R.layout.activity_home_page_user);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

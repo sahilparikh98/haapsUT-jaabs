@@ -3,7 +3,9 @@ package com.jaabs.alanzeng.happsut;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+//import android.net.ParseException;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +30,11 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.parse.LogInCallback;
+import com.parse.ParseUser;
+import com.parse.ParseException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -184,9 +191,31 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            //showProgress(true);
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
+            ParseUser.logInInBackground(email, password,
+                    new LogInCallback() {
+                        public void done(ParseUser user, ParseException e) {
+                            if(user != null) {
+                                boolean isOrg = user.getBoolean("isOrg");
+                                if(isOrg) {
+                                    Intent intent = new Intent(LoginPage.this, homePageOrg.class);
+                                    startActivity(intent);
+                                    Toast.makeText(getApplicationContext(), "Successfully logged in!", Toast.LENGTH_LONG).show();
+                                }
+                                else {
+                                    Intent intent = new Intent(LoginPage.this, homePageUser.class);
+                                    startActivity(intent);
+                                    Toast.makeText(getApplicationContext(), "Successfully logged in!", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "No such user exist, please sign up.", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+
         }
     }
 
@@ -322,6 +351,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
                     return pieces[1].equals(mPassword);
                 }
             }
+
 
             // TODO: register the new account here.
             return true;

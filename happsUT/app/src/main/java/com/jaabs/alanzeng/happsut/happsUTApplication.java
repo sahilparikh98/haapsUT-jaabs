@@ -3,7 +3,9 @@ package com.jaabs.alanzeng.happsut;
 import com.onesignal.OneSignal;
 import android.app.Application;
 import com.parse.Parse;
+import com.parse.ParseACL;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 /**
  * Created by sparikh98 on 10/22/16.
@@ -23,6 +25,13 @@ public class happsUTApplication extends Application {
         ParseObject.registerSubclass(PostTags.class);
         ParseObject.registerSubclass(Tag.class);
         ParseObject.registerSubclass(UserTags.class);
+
+        ParseUser.enableAutomaticUser();
+        ParseACL defaultACL = new ParseACL();
+
+        defaultACL.setPublicReadAccess(true);
+
+        ParseACL.setDefaultACL(defaultACL, true);
 
     }
 

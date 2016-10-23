@@ -18,4 +18,8 @@ public class Tag extends ParseObject {
     {
         put("tagName", name);
     }
+
+    public void setTagCategory(String category) {
+        put("category", category);
+    }
 }
