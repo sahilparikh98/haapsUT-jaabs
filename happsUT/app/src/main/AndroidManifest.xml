@@ -23,13 +23,7 @@
             android:label="Search" />
         <activity
             android:name=".LoginPage"
-            android:label="@string/title_activity_login_page" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_login_page"></activity>
         <activity
             android:name=".createNewAccount"
             android:label="Create New Account" />
@@ -50,11 +44,22 @@
             android:label="Create New Organization" />
         <activity
             android:name=".homePageUser"
-
             android:label="happsUT"
             android:theme="@style/nullLOL.NoActionBar">
-        <activity android:name=".chooseNewAccount"/>
-        <activity android:name=".happsUTApplication"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        <activity android:name=".chooseNewAccount" />
+        <activity android:name=".happsUTApplication" />
+        </activity>
+        <activity
+            android:name=".hpUser"
+            android:label="@string/title_activity_hp_user"
+            android:theme="@style/nullLOL.NoActionBar">
+
         </activity>
     </application>
 
