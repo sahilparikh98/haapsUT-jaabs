@@ -11,66 +11,77 @@
     tools:context="com.jaabs.alanzeng.happsut.createNewAccount">
 
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+        android:layout_height="match_parent">
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/name"
-            android:hint="Name" />
+            android:orientation="vertical" >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/email"
-            android:hint="Email" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/name"
+                android:hint="Name" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/password"
-            android:hint="Password" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/email"
+                android:hint="Email" />
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:name = "ok"
-            android:id="@+id/major" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/password"
+                android:hint="Password" />
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/college" />
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name = "ok"
+                android:id="@+id/major" />
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/activity" />
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/college" />
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/misc" />
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/activity" />
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/price" />
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/year" />
 
-        <ExpandableListView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/year" />
-    </LinearLayout>
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/misc" />
+
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/price" />
+
+            <Button
+                android:text="Submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
