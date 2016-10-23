@@ -42,8 +42,11 @@ public class Post extends ParseObject {
         put("date", date);
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         put("name", name);
+    }
+
+    public void setPostTags(PostTags postTags) {
+        put("toTags", postTags);
     }
 }
