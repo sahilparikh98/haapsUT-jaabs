@@ -12,20 +12,20 @@ import com.parse.ParseUser;
 @ParseClassName("UserTags")
 public class UserTags extends ParseObject {
 
-    private ParseRelation<Tag> toTags;
-    private ParseUser ofUser;
+    private String tag;
+    private String email;
 
     public UserTags() {
     }
 
-    public void addTag(Tag tag)
+    public void setTag(String tag)
     {
-        toTags.add(tag);
+        put("tag", tag);
     }
 
-    public void setOfUser(ParseUser user)
+    public void setOfUser(String user)
     {
-        put("ofUser", user);
+        put("userEmail", user);
     }
 
 
