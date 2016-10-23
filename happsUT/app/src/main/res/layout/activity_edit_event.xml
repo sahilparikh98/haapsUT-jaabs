@@ -10,4 +10,158 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.jaabs.alanzeng.happsut.editEvent">
 
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_below="@+id/EventName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/DateFrom"
+        android:text="@string/date_from"
+        android:contentDescription="@string/starting_date" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_alignTop="@+id/DateFrom"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/DateTo"
+        android:text="@string/date_to"
+        android:contentDescription="@string/ending_date" />
+
+    <Button
+        android:text="@string/edit_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CreateEvent"
+        android:contentDescription="@string/edit_event"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/TimeFrom"
+        android:text="@string/time_from"
+        android:contentDescription="@string/starting_time"
+        android:layout_alignBaseline="@+id/TimeTo"
+        android:layout_alignBottom="@+id/TimeTo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/Location"
+        android:text="@string/location"
+        android:contentDescription="@string/location_of_event"
+        android:layout_below="@+id/TimeTo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/event_name"
+        android:ems="10"
+        android:id="@+id/EventName"
+        android:contentDescription="@string/name_of_event"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/edit_tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditTags"
+        android:layout_below="@+id/Location"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/TimeTo"
+        android:text="@string/time_to"
+        android:contentDescription="@string/ending_time"
+        android:layout_below="@+id/DateTo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:gravity = "center"
+        android:text="@string/to"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:id="@+id/to"
+        android:contentDescription="@string/to"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:typeface="normal"
+        android:layout_alignTop="@+id/DateFrom"
+        android:layout_toEndOf="@+id/DateFrom"
+        android:layout_toRightOf="@+id/DateFrom"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/TimeFrom"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:gravity = "center"
+        android:text="@string/to"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:id="@id/to"
+        android:contentDescription="@string/to"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        android:typeface="normal"
+        android:layout_alignTop="@+id/TimeFrom"
+        android:layout_toEndOf="@+id/TimeFrom"
+        android:layout_toRightOf="@+id/TimeFrom"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/Location" />
+
+    <EditText
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/Description"
+        android:gravity="top"
+        android:text="@string/description"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:selectAllOnFocus="false"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:contentDescription="@string/description_of_event"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/EditTags"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
 </RelativeLayout>
