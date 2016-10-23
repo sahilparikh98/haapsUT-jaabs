@@ -54,14 +54,6 @@ public class homePageUser extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
@@ -116,10 +108,30 @@ public class homePageUser extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_home_page_user, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
+//            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
+//            {
+//                View rootView = inflater.inflate(R.layout.fragment_page1, container, false);
+//                return rootView;
+//            }
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 2)
+            {
+                View rootView = inflater.inflate(R.layout.fragment_page2, container, false);
+                return rootView;
+            }
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 3)
+            {
+                View rootView = inflater.inflate(R.layout.fragment_page3, container, false);
+                return rootView;
+            }
+            else
+            {
+                View rootView = inflater.inflate(R.layout.fragment_home_page_user, container, false);
+                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+                String text = getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER));
+                textView.setText(text);
+                return rootView;
+            }
+
         }
     }
 
@@ -150,11 +162,11 @@ public class homePageUser extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Home";
                 case 1:
-                    return "SECTION 2";
+                    return "Search";
                 case 2:
-                    return "SECTION 3";
+                    return "About me";
             }
             return null;
         }
