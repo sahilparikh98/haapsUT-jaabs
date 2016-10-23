@@ -23,5 +23,13 @@ public class chooseNewAccount extends AppCompatActivity {
                 startActivity(new Intent(chooseNewAccount.this, createNewAccount.class));
             }
         });
+
+        Button newOrg = (Button) findViewById(R.id.newOrg);
+        newOrg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(chooseNewAccount.this, createNewOrg.class));
+            }
+        });
     }
 }

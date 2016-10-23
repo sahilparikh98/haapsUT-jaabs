@@ -99,6 +99,27 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+        setUpButtons();
+
+    }
+
+
+    private void setUpButtons(){
+        Button login = (Button) findViewById(R.id.email_sign_in_button);
+        login.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(LoginPage.this, homePageUser.class)); // TODO: has to properly do this ish with right login
+            }
+        });
+
+        Button newAccount = (Button) findViewById(R.id.Create_an_account);
+        newAccount.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(LoginPage.this, chooseNewAccount.class));
+            }
+        });
     }
 
     private void populateAutoComplete() {
@@ -292,6 +313,7 @@ public class LoginPage extends AppCompatActivity implements LoaderCallbacks<Curs
         }
 
         addEmailsToAutoComplete(emails);
+
     }
 
     @Override
